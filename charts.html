@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin - Charts</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+     <link rel="stylesheet" href="vendor/layui/css/layui.css"  media="all">
+<script type="text/css">
+
+    .image-upload > input
+    {
+        display: none;
+    }
+</script>
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="charts.html">个人简历信息</a>
+
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navbar Search -->
+      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Navbar -->
+      <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bell fa-fw"></i>
+            <span class="badge badge-danger">9+</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-envelope fa-fw"></i>
+            <span class="badge badge-danger">7</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle fa-fw"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="#">Activity Log</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div id="wrapper">
+
+    <!--   Sidebar -->
+         <ul class="sidebar navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pages</span>
+          </a>
+
+          <!-- 菜单连接 -->
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header">Login Screens:</h6>
+            <a class="dropdown-item" href="login.html">Login</a>
+            <a class="dropdown-item" href="register.html">Register</a>
+            <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header">Other Pages:</h6>
+            <a class="dropdown-item" href="404.html">404 Page</a>
+            <a class="dropdown-item" href="blank.html">Blank Page</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>简历制作</span></a>
+        </li>
+      </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <blockquote class="layui-elem-quote layui-text">
+                 基本信息
+          </blockquote>
+          
+<!--  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 5px;">
+  <legend  >简历</legend>
+    </fieldset>-->
+              
+
+<form class="layui-form layui-form-pane" action="">
+  <!-- <div class="layui-form-item">
+    <label class="layui-form-label">长输入框</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+    </div>
+  </div> -->
+<!--  <div>-->
+  <div class="layui-form-item">
+  <div class="layui-inline"  style="widows: 50%;">
+  <div class="layui-form-item">
+    <label class="layui-form-label">姓名</label>
+    <div class="layui-input-inline">
+      <input type="text" id="uname_txt" name="user_name" lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">职位</label>
+    <div class="layui-input-inline">
+      <input type="text" id="uposition_txt" name="user_position" lay-verify="required" placeholder="请输入职位" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">居住地</label>
+    <div class="layui-input-inline">
+      <input type="text" id="uaddress_txt" name="user_address" lay-verify="required" placeholder="请输入居住地" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">国籍</label>
+    <div class="layui-input-inline">
+      <input type="text" id="ucitizenship_txt" name="user_citizenship" lay-verify="required" placeholder="请输入国籍" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+
+  <!--<div class="layui-form-item">
+    <label class="layui-form-label">国籍</label>
+    <div class="layui-input-inline">
+      <input type="text" id="ucitizenship_txt" name="usercitizenship" lay-verify="required" placeholder="请输入国籍" autocomplete="off" class="layui-input">
+    </div>
+  </div>-->
+  </div>
+  <div class="layui-inline"  style="widows: 50%;">
+
+
+    <div class="image-upload" style="display: block; width: 100%;float: left;">
+      <label for="file-input"   style="vertical-align: middle; width: 500px; height: 200px;" >
+        <img   id="uphoto_img"   style="width: 150px;   height: 200px;margin: auto 300px;" src="img/照骗.jpg"/>
+      </label>
+      <input id="file-input"  style="display: none;" type="file"/>
+    </div>
+
+  </div>
+  </div>
+
+
+
+  <blockquote class="layui-elem-quote layui-text">
+    个人概述
+  </blockquote>
+
+  <div class="layui-form-item layui-form-text">
+
+    <div class="layui-input-block">
+      <textarea  id="uinfo_txtarea"  placeholder="请输入内容 不超过200字" class="layui-textarea"></textarea>
+    </div>
+  </div>
+  <blockquote class="layui-elem-quote layui-text">
+    从业经历
+  </blockquote>
+  <div class="layui-form-item">
+    <div class="layui-inline" style="width: 20%;">
+      <label class="layui-form-label">起始时间</label>
+      <div class="layui-input-block" >
+        <input type="text" name="date" id="start_date"  autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline"  style="width: 20%;">
+      <label class="layui-form-label"  >结束时间</label>
+      <div class="layui-input-block"  >
+        <input type="text" name="date" id="end_date"  autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-inline" style="width: 48%;">
+      <label class="layui-form-label"> 经历 </label>
+      <div class="layui-input-block">
+        <input type="text" name="job_expren" lay-verify="title" autocomplete="off" placeholder="请输入从业经历" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline" >
+
+      <div class="layui-btn-group"  >
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe654;</i>
+        </button>
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe640;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <blockquote class="layui-elem-quote layui-text">
+    行业经验
+  </blockquote>
+
+  <div class="layui-form-item" >
+    <div class="layui-inline" style="width: 20%;">
+      <label class="layui-form-label">行业</label>
+      <div class="layui-input-block">
+        <input type="text" id="industry_txt" name="user_industry" lay-verify="required" placeholder="请输入行业经验" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline" style="width: 69% ;">
+      <label class="layui-form-label"  >经历</label>
+      <div class="layui-input-block">
+        <input type="text"   id="uexperience_txt"   name="user_experience" lay-verify="title" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline" >
+
+      <div class="layui-btn-group">
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe654;</i>
+        </button>
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe640;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <blockquote class="layui-elem-quote layui-text">
+    技术经验
+  </blockquote>
+  <div class="layui-form-item" >
+    <div class="layui-inline" style="width: 90%;">
+      <label class="layui-form-label">技术</label>
+      <div class="layui-input-block">
+        <input type="text" id="utech_txt" name="user_tech" lay-verify="required" placeholder="请输入技术" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-inline" >
+
+      <div class="layui-btn-group">
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe654;</i>
+        </button>
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe640;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <blockquote class="layui-elem-quote layui-text">
+    语言----------语言级别分为“优秀”, “较好”, “一般” 或 “较差”
+  </blockquote>
+  <div class="layui-form-item">
+    <div class="layui-inline" style="width: 21.6%;">
+      <label class="layui-form-label">语言</label>
+      <div class="layui-input-block" >
+        <input type="text" id="ulanguage_txt" name="user_language" lay-verify="required" placeholder="请输入语言" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline"  style="width: 21.6%;">
+      <label class="layui-form-label">听/说</label>
+      <div class="layui-input-block"  >
+        <input type="text" id="ulandh_txt" name="user_landh" lay-verify="required" placeholder="请输入听/说水平" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-inline" style="width: 21.6%;">
+      <label class="layui-form-label">阅读 </label>
+      <div class="layui-input-block">
+        <input type="text" id="uread_txt" name="user_read" lay-verify="required" placeholder="请输入阅读水平" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline"  style="width: 21.6%;">
+      <label class="layui-form-label">写作</label>
+      <div class="layui-input-block"  >
+        <input type="text" id="uwrite_txt" name="user_write" lay-verify="required" placeholder="请输入写作水平" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline" >
+
+      <div class="layui-btn-group">
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe654;</i>
+        </button>
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe640;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <blockquote class="layui-elem-quote layui-text">
+    项目经验
+  </blockquote>
+  <div class="layui-form-item">
+    <div class="layui-inline" >
+      <label class="layui-form-label">起始时间</label>
+      <div class="layui-input-block" >
+        <input type="text" name="date" id="start_date_2"  autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline"  >
+      <label class="layui-form-label">结束时间</label>
+      <div class="layui-input-block"  >
+        <input type="text" name="date" id="end_date_2"  autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">客户</label>
+      <div class="layui-input-block">
+        <input type="text"  id="client_txt" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">项目</label>
+      <div class="layui-input-block">
+        <input type="text" name="title" id="uproject_txt" autocomplete="off" placeholder="请输入标题" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">角色</label>
+      <div class="layui-input-block">
+        <input type="text" name="title"  id="urole_txt"   autocomplete="off" placeholder="请输入标题" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">职责</label>
+      <div class="layui-input-block">
+        <input type="text" name="title"   id="uwork_txt" autocomplete="off" placeholder="请输入标题" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-form-item" >
+
+      <div class="layui-btn-group">
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe654;</i>
+        </button>
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe640;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <blockquote class="layui-elem-quote layui-text">
+    培训/证书
+  </blockquote>
+  <div class="layui-form-item" >
+    <div class="layui-inline" style="width: 90%;">
+      <label class="layui-form-label">培训/证书</label>
+      <div class="layui-input-block">
+        <input type="text" id="uhonor_txt" name="user_honor" lay-verify="required" placeholder="请输入国籍" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-inline" >
+
+      <div class="layui-btn-group">
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe654;</i>
+        </button>
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe640;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <blockquote class="layui-elem-quote layui-text">
+    教育背景
+  </blockquote>
+  <div class="layui-form-item" >
+    <div class="layui-inline" style="width: 90%;">
+      <label class="layui-form-label">教育背景</label>
+      <div class="layui-input-block">
+        <input type="text" id="uschool_txt" name="user_school" lay-verify="required" placeholder="请输入国籍" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-inline" >
+
+      <div class="layui-btn-group">
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe654;</i>
+        </button>
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe640;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <blockquote class="layui-elem-quote layui-text">
+    其他
+  </blockquote>
+  <div class="layui-form-item" >
+    <div class="layui-inline" style="width: 90%;">
+      <label class="layui-form-label">其他</label>
+      <div class="layui-input-block">
+        <input type="text" id="uotherinfo_txt" name="user_otherinfo" lay-verify="required" placeholder="请输入国籍" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-inline" >
+
+      <div class="layui-btn-group">
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe654;</i>
+        </button>
+        <button class="layui-btn layui-btn-sm">
+          <i class="layui-icon">&#xe640;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="layui-form-item">
+    <button class="layui-btn" id="submit_btn" lay-submit="" lay-filter="demo2">提交</button>
+
+    <button type="reset"  id="reset_btn"  class="layui-btn layui-btn-primary">重置</button>
+
+    <button class="layui-btn" id="down_btn" lay-submit="" lay-filter="">下载</button>
+
+    <button class="layui-btn" id="up_btn" lay-submit="" lay-filter="">上传</button>
+  </div>
+</form>
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<script src="vendor/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use(['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+  
+  //日期
+  laydate.render({
+    elem: '#start_date'
+  });
+  laydate.render({
+    elem: '#end_date'
+  });
+    laydate.render({
+        elem: '#start_date_2'
+    });
+    laydate.render({
+        elem: '#end_date_2'
+    });
+  //创建一个编辑器
+  var editIndex = layedit.build('LAY_demo_editor');
+ 
+  //自定义验证规则
+  form.verify({
+    title: function(value){
+      if(value.length < 5){
+        return '标题至少得5个字符啊';
+      }
+    }
+    ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+    ,content: function(value){
+      layedit.sync(editIndex);
+    }
+  });
+  
+  //监听指定开关
+  form.on('switch(switchTest)', function(data){
+    layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+      offset: '6px'
+    });
+    layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+  });
+  
+  //监听提交
+  form.on('submit(demo1)', function(data){
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+    return false;
+  });
+ 
+  //表单初始赋值
+  form.val('example', {
+    "username": "贤心" // "name": "value"
+    ,"password": "123456"
+    ,"interest": 1
+    ,"like[write]": true //复选框选中状态
+    ,"close": true //开关状态
+    ,"sex": "女"
+    ,"desc": "我爱 layui"
+  })
+  
+  
+});
+</script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+<!--     <script src="vendor/layui/layui.js"></script> -->
+
+  </body>
+
+</html>
